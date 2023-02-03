@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
+    integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>week3checkpoint</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+      <a class="navbar-brand ms-3" href="#">
+        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
+          loading="lazy">
+        <span class="ms-2">week3checkpoint</span>
+      </a>
+      <div class="justify-content-end card">
+        <button>💾save</button>
+      </div>
+    </nav>
+  </header>
+  <main class="bg-dark text-light">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 card d-flex">
+            <h2 id="">Note-Title</h2>
+            <h4>Created at Time Stamp</h4>
+            <h4>Updated at Time Stamp</h4>
+            <h4>Word Count & Character Count</h4>
+
+            <div class="bg-secondary text-white">
+              <textarea name="body" id="" cols="30" rows="10"> tom write code, tom get banana.</textarea>
+            </div>
+            <div>
+              <button class="btn btn-danger">delete</button>
+            </div>
+        </div>
+      </div>
+     </div>
+     <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="card  bg-light text-dark">
+            <h3>Total Number of Notes</h3>            
+            <h2 id="newNote">NOTE TITLE</h2>
+
+            <form onsubmit="app.noteController.createNote()">
+            <div>
+              <label for="noteTitle" class="form-label">Title</label>
+              <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
+            </div>
+            <div>
+              <input type="color" name="noteColor" id="noteColor">
+            </div>
+            <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
+            
+            
+            
+            
+            <button class="btn btn-success">SUBMIT</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+     </div>
+  </main>
+  <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 💖 by CodeWorks</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
