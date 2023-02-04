@@ -14,6 +14,12 @@ freshNote.forEach(c => template += c.freshNote)
 
 }
 
+function _setActiveNote(){
+    console.log('setting active note')
+    let activeNote = 
+    setHTML('activeNote', template)
+}
+
 export class NoteController{
 
     constructor() {
@@ -38,6 +44,14 @@ export class NoteController{
         }
     }
 
+    createActiveNote(){
+        try {let journalEntry = document.getElementById(journal)
+            noteService.createActiveNote(journalEntry)
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
 

@@ -9,6 +9,9 @@ class AppState extends EventEmitter {
 
     /** @type {import('./Models/Note').Note[]} */
   newNote = []
+
+    createdNote = null
+  
 }
 
 export const appState = new Proxy(new AppState(), {

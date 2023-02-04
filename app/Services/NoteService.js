@@ -12,6 +12,17 @@ createNewNote(FormData){
     appState.emit('newNote')
 }
 
+createActiveNote(){
+    try {
+        let createdNote = appState.newNote
+        appState.newNote.push(createdNote)
+        console.log(createdNote)
+    } catch (error) {
+        throw new error(error)
+    }
+    
+}
+
 }
 
 export const noteService = new NoteService()
