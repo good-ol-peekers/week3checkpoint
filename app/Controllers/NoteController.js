@@ -16,7 +16,8 @@ freshNote.forEach(c => template += c.freshNote)
 
 function _setActiveNote(){
     console.log('setting active note')
-    let activeNote = 
+    let activeNote = appState.createdNote
+
     setHTML('activeNote', template)
 }
 
@@ -45,7 +46,7 @@ export class NoteController{
     }
 
     createActiveNote(){
-        try {let journalEntry = document.getElementById(journal)
+        try {let journalEntry = document.getElementById('journal')
             noteService.createActiveNote(journalEntry)
             
         } catch (error) {

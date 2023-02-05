@@ -9,7 +9,7 @@ class AppState extends EventEmitter {
 
     /** @type {import('./Models/Note').Note[]} */
   newNote = []
-
+ /** @type {import('./Models/Note').Note[]} */
     createdNote = null
   
 }

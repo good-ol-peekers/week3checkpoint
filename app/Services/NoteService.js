@@ -14,8 +14,10 @@ createNewNote(FormData){
 
 createActiveNote(){
     try {
-        let createdNote = appState.newNote
-        appState.newNote.push(createdNote)
+        let createdNote = appState.createdNote
+        appState.createdNote.
+        appState.createdNote.push(createdNote)
+        // appState.createdNote.push(createdNote)
         console.log(createdNote)
     } catch (error) {
         throw new error(error)
