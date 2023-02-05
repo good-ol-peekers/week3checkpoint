@@ -1,3 +1,4 @@
+import { Note } from "./Models/Note"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -8,7 +9,7 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
     /** @type {import('./Models/Note').Note[]} */
-  newNote = []
+  newNote = loadState('activeNote', [Note])
 
  /** @type {import('./Models/Note').Note|null} */
     createdNote = null

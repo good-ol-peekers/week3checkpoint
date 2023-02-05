@@ -26,7 +26,10 @@ createActiveNote(updatedNote){
     }
     
 }
-
+setNote(noteId){
+    let setNote = appState.newNote.find(n. => n.id == noteId)
+    appState.createdNote = setNote
+}
 }
 
 export const noteService = new NoteService()

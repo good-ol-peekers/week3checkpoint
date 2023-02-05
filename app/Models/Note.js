@@ -15,6 +15,14 @@ this.currentTime = data.currentTime
 this.totalJots = data.totalJots
 this.wordCount = data.wordCount
 this.characterCount = data.characterCount
+switch (this.color) {
+  case 'green':
+    this.color = 'green'
+    break;
+
+  default:
+    break;
+}
 }
 
 get freshNote() {
@@ -25,19 +33,11 @@ get freshNote() {
 
 get activeNote(){
   return `
- <h2>${this.title}</h2>
-          <h4>Created at Time Stamp</h4>
+ <div class="col-10 m-auto rounded border">
+          <h2>${this.title}</h2>
+          <h4>${this.createdTime}</h4>
           <h4>Updated at Time Stamp</h4>
           <h4>Word Count & Character Count</h4>
-
-          <div class="bg-secondary text-white">
-            <textarea name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code, tom get bananas
-                tom like bananas
-              </textarea>
-          </div>
-          <div>
-            <button class="btn btn-outline-danger">delete</button>
-          </div>
   `
 }
 }

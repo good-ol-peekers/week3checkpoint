@@ -28,18 +28,17 @@
       </div>
     </nav>
   </header>
-  <main class="bg-dark text-dark">
+  <main class="bg-dark text-light">
     <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-10 card d-flex" id="activeNote">
-          <h2 id="">Note-Title</h2>
+      <div class="row" id="activeNote">
+        <div class="col-10 m-auto rounded border">
+          <h2>Note-Title</h2>
           <h4>Created at Time Stamp</h4>
           <h4>Updated at Time Stamp</h4>
           <h4>Word Count & Character Count</h4>
 
           <div class="bg-secondary text-white">
-            <textarea name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code, tom get bananas
-                tom like bananas
+            <textarea class="textArea" name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code
               </textarea>
           </div>
           <div>
