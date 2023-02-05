@@ -25,17 +25,19 @@ get freshNote() {
 
 get activeNote(){
   return `
-              <h2 id="">${this.title}</h2>
-            <h4>${this.createdTime}</h4>
-            <h4>${this.currentTime}</h4>
-            <h4>${this.characterCount}</h4>
-            <h4>${this.wordCount}</h4>
-            <div class="bg-secondary text-white">
-              <textarea name="body" id="" cols="30" rows="10"> tom write code, tom get banana.</textarea>
-            </div>
-            <div>
-              <button class="btn btn-danger">delete</button>
-            </div>
+ <h2>${this.title}</h2>
+          <h4>Created at Time Stamp</h4>
+          <h4>Updated at Time Stamp</h4>
+          <h4>Word Count & Character Count</h4>
+
+          <div class="bg-secondary text-white">
+            <textarea name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code, tom get bananas
+                tom like bananas
+              </textarea>
+          </div>
+          <div>
+            <button class="btn btn-outline-danger">delete</button>
+          </div>
   `
 }
 }

@@ -17,7 +17,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-dark no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
@@ -28,54 +28,51 @@
       </div>
     </nav>
   </header>
-  <main class="bg-dark text-light">
+  <main class="bg-dark text-dark">
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-10 card d-flex" id="activeNote">
-            <h2 id="">Note-Title</h2>
-            <h4>Created at Time Stamp</h4>
-            <h4>Updated at Time Stamp</h4>
-            <h4>Word Count & Character Count</h4>
+          <h2 id="">Note-Title</h2>
+          <h4>Created at Time Stamp</h4>
+          <h4>Updated at Time Stamp</h4>
+          <h4>Word Count & Character Count</h4>
 
-            <div class="bg-secondary text-white">
-              <textarea name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code, tom get bananas
+          <div class="bg-secondary text-white">
+            <textarea name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code, tom get bananas
                 tom like bananas
               </textarea>
-            </div>
-            <div>
-              <button class="btn btn-outline-danger">delete</button>
-            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline-danger">delete</button>
+          </div>
         </div>
       </div>
-     </div>
-     <div class="container">
+    </div>
+    <div class="container" id="Input box">
       <div class="row">
         <div class="col-4">
-          <div class="card  bg-light text-dark" id="newNote">
-            <h3>Total Number of Notes</h3>            
+          <div class="card  bg-light text-dark">
+            <h3>Total Number of Notes</h3>
             <h2 id="newNote">NOTE TITLE</h2>
 
             <form onsubmit="app.noteController.createNote()">
-            <div>
-              <label for="noteTitle" class="form-label">Title</label>
-              <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
-            </div>
-            <div class="m-2">
-              <input type="color" name="noteColor" id="noteColor" value="#0000ff">
-              <label for="noteColor">Pick a Color for your note.</label>
-            </div>
-            <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
-            
-            
-            
-            
-            <button class="btn btn-success">SUBMIT</button>
+              <div>
+                <label for="noteTitle" class="form-label">Title</label>
+                <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
+              </div>
+              <div class="m-2">
+                <input type="color" name="noteColor" id="noteColor" value="#0000ff">
+                <label for="noteColor">Pick a Color for your note.</label>
+              </div>
+              <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
+
+              <button class="btn btn-success">SUBMIT</button>
             </form>
           </div>
 
         </div>
       </div>
-     </div>
+    </div>
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">

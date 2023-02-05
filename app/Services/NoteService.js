@@ -1,6 +1,6 @@
 import { appState } from "../AppState.js"
 import { Note } from "../Models/Note.js"
-import { EventEmitter } from "../Utils/EventEmitter.js"
+import { saveState } from "../Utils/Store.js"
 
 class NoteService{
 
@@ -12,11 +12,13 @@ createNewNote(FormData){
     appState.emit('newNote')
 }
 
-createActiveNote(){
+createActiveNote(updatedNote){
     try {
         let createdNote = appState.createdNote
-        appState.createdNote.
-        appState.createdNote.push(createdNote)
+        createdNote.updatedNote = updatedNote
+        appState.createdNote.push(createdNo)
+        saveState('journal',appState.createdNote)
+        appState.emit('activeNote')
         // appState.createdNote.push(createdNote)
         console.log(createdNote)
     } catch (error) {
