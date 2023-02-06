@@ -11,7 +11,8 @@ this.title = data.title
 this.body = data.body || ''
 this.color = data.color
 this.createdTime = data.createdTime || new Date().toLocaleTimeString('en-US')
-this.currentTime = data.currentTime
+// TODO need to add a property for updatedTime
+this.updatedTime = data.updatedTime || new Date().toLocaleTimeString('en-US')
 this.totalJots = data.totalJots
 this.wordCount = data.wordCount
 this.characterCount = data.characterCount
@@ -32,17 +33,19 @@ get freshNote() {
     `
 }
 
+// TODO add color style to these templates....think of how may I apply a style with javascript or in my HTML template
+
 get activeNote(){
   return `
  <div class="col-10 m-auto rounded border">
           <h2>${this.title}</h2>
           <h4>${this.createdTime}</h4>
-          <h4>Updated at Time Stamp</h4>
-          <h4>Word Count & Character Count</h4>
+          <h4>${this.updatedTime}</h4>
+          <h4>${this.wordCount} & ${this.characterCount}</h4>
 
           <div class="bg-secondary text-white">
             <textarea class="textArea" name="body" id="journal" cols="30" rows="10"
-              onblur="app.noteController.updateActiveNote()">
+              onblur="app.noteController.updateActiveNote()">${this.body}
               </textarea>
           </div>
           <div>
@@ -50,5 +53,8 @@ get activeNote(){
           </div>
         </div>
   `
+
+  // TODO need to add delete function to button
+
 }
 }
