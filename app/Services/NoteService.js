@@ -7,28 +7,28 @@ class NoteService{
 createNewNote(FormData){
     console.log("creating note in service")
     let newNote = new Note(FormData)
-    appState.newNote.push(newNote)
-    console.log(appState.newNote)
+    appState.Notes.push(newNote)
+    console.log(appState.Notes)
     appState.emit('newNote')
+    saveState('notes', appState.Notes)
 }
 
-createActiveNote(updatedNote){
+updateActiveNote(updatedNote){
     try {
-        let createdNote = appState.createdNote
-        createdNote.updatedNote = updatedNote
-        appState.createdNote.push(createdNo)
-        saveState('journal',appState.createdNote)
+        appState.activeNote.body = updatedNote
+        saveState('notes', appState.Notes)
         appState.emit('activeNote')
         // appState.createdNote.push(createdNote)
-        console.log(createdNote)
+        console.log(updatedNote)
     } catch (error) {
-        throw new error(error)
+        console.log(error)
     }
     
 }
 setNote(noteId){
-    let setNote = appState.newNote.find(n. => n.id == noteId)
-    appState.createdNote = setNote
+    let setNote = appState.Notes.find(n => n.id == noteId)
+    appState.activeNote = setNote
+    console.log(noteId)
 }
 }
 

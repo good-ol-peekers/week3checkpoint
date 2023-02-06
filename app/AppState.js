@@ -1,4 +1,4 @@
-import { Note } from "./Models/Note"
+import { Note } from "./Models/Note.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -9,11 +9,11 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
     /** @type {import('./Models/Note').Note[]} */
-  newNote = loadState('activeNote', [Note])
+  Notes = loadState('notes', [Note])
 
  /** @type {import('./Models/Note').Note|null} */
-    createdNote = null
-  
+    activeNote = null//oadState('journal', Note)
+
 }
 
 export const appState = new Proxy(new AppState(), {

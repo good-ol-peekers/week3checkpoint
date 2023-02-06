@@ -7,24 +7,24 @@ import { noteService } from "../Services/NoteService.js"
 
 function _drawNewNote(){
     // console.log("drawingNotes")
-let freshNote = appState.newNote
+let freshNote = appState.Notes
 let template = ''
 freshNote.forEach(c => template += c.freshNote) 
-    setHTML('newNote', template)
+    setHTML('newNoteHTML', template)
 
 }
 
 function _setActiveNote(){
-    let setUpNote = appState.createdNote
+    let setUpNote = appState.activeNote
     
-    setHTML('activeNote', setUpNote.activeNote)
+    setHTML('journal', setUpNote.activeNote)
 }
 export class NoteController{
 
     constructor() {
         console.log("hello from the controller")
         _drawNewNote()
-        appState.on('newNote', _drawNewNote)
+        appState.on('Notes', _drawNewNote)
         appState.on('activeNote', _setActiveNote)
 
     }
@@ -44,11 +44,13 @@ export class NoteController{
         }
     }
 
-    createActiveNote(){
+    updateActiveNote(){
         try {let journalEntry = document.getElementById('journal')
         let updatedNote = journalEntry.value
-        noteService.createActiveNote(updatedNote)
-            
+        // journalEntry.value = 'test'
+        noteService.updateActiveNote(updatedNote)
+            console.log("called create active note")
+            console.log(updatedNote)
         } catch (error) {
             console.error(error)
         }

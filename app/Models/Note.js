@@ -26,8 +26,9 @@ switch (this.color) {
 }
 
 get freshNote() {
-    return `
-    ${this.title}
+    return `<h3>${this.createdTime}</h3>
+            <button class="btn btn-outline-success"  onclick="app.noteController.setNote('${this.id}')">${this.title}</button>
+    
     `
 }
 
@@ -38,6 +39,16 @@ get activeNote(){
           <h4>${this.createdTime}</h4>
           <h4>Updated at Time Stamp</h4>
           <h4>Word Count & Character Count</h4>
+
+          <div class="bg-secondary text-white">
+            <textarea class="textArea" name="body" id="journal" cols="30" rows="10"
+              onblur="app.noteController.updateActiveNote()">
+              </textarea>
+          </div>
+          <div>
+            <button class="btn btn-outline-danger">delete</button>
+          </div>
+        </div>
   `
 }
 }

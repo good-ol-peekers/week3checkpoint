@@ -38,7 +38,8 @@
           <h4>Word Count & Character Count</h4>
 
           <div class="bg-secondary text-white">
-            <textarea class="textArea" name="body" id="journal" cols="30" rows="10" onblur="app.noteController.createActiveNote()"> tom write code
+            <textarea class="textArea" name="body" id="journal" cols="30" rows="10"
+              onblur="app.noteController.updateActiveNote()"> tom write code
               </textarea>
           </div>
           <div>
@@ -50,23 +51,23 @@
     <div class="container" id="Input box">
       <div class="row">
         <div class="col-4">
-          <div class="card  bg-light text-dark">
-            <h3>Total Number of Notes</h3>
-            <h2 id="newNote">NOTE TITLE</h2>
+          <form onsubmit="app.noteController.createNote()">
+            <div>
+              <label for="noteTitle" class="form-label">Title</label>
+              <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
+            </div>
+            <div class="m-2">
+              <input type="color" name="noteColor" id="noteColor" value="#0000ff">
+              <label for="noteColor">Pick a Color for your note.</label>
+            </div>
+            <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
 
-            <form onsubmit="app.noteController.createNote()">
-              <div>
-                <label for="noteTitle" class="form-label">Title</label>
-                <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
-              </div>
-              <div class="m-2">
-                <input type="color" name="noteColor" id="noteColor" value="#0000ff">
-                <label for="noteColor">Pick a Color for your note.</label>
-              </div>
-              <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
+            <button class="btn btn-success">SUBMIT</button>
+          </form>
+          <div class="card  bg-light text-dark" id="newNoteHTML">
+            <!-- <h3>Total Number of Notes</h3>
+            <button class="btn btn-outline-success" type="on submit">note title</button> -->
 
-              <button class="btn btn-success">SUBMIT</button>
-            </form>
           </div>
 
         </div>
