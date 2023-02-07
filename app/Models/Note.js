@@ -16,19 +16,13 @@ this.updatedTime = data.updatedTime || new Date().toLocaleTimeString('en-US')
 this.totalJots = data.totalJots
 this.wordCount = data.wordCount
 this.characterCount = data.characterCount
-switch (this.color) {
-  case 'green':
-    this.color = 'green'
-    break;
 
-  default:
-    break;
 }
-}
+
 
 get freshNote() {
     return `<h3>${this.createdTime}</h3>
-            <button class="btn btn-outline-success"  onclick="app.noteController.setNote('${this.id}')">${this.title}</button>
+            <button class="btn btn-outline-success"  onclick="app.noteController.setNote('${this.id}')">(${this.title}${this.color}</button>
     
     `
 }
@@ -37,13 +31,16 @@ get freshNote() {
 
 get activeNote(){
   return `
- <div class="col-10 m-auto rounded border">
-          <h2>${this.title}</h2>
+   <div class="card text-dark bg-light">
+ <div class="col-10 m-auto rounded border ">
+ 
+          <h1 style="color: ${this.color}">${this.title}</h1>
           <h4>${this.createdTime}</h4>
           <h4>${this.updatedTime}</h4>
           <h4>${this.wordCount} & ${this.characterCount}</h4>
+          <h4></h4>
 
-          <div class="bg-secondary text-white">
+          <div class="bg-secondary">
             <textarea class="textArea" name="body" id="journal" cols="30" rows="10"
               onblur="app.noteController.updateActiveNote()">${this.body}
               </textarea>

@@ -57,16 +57,33 @@
               <input type="text" name="title" id="noteTitle" placeholder="JS-Notes" minlength="3" maxlength="15">
             </div>
             <div class="m-2">
-              <input type="color" name="color" id="noteColor" value="#0000ff">
+              <input type="color" name="color" id="noteColor">
               <label for="noteColor">Pick a Color for your note.</label>
             </div>
             <!-- NOTE FIGURE OUT HOW TO TAKE IN THE COLOR ???????????? -->
 
             <button class="btn btn-success">SUBMIT</button>
           </form>
-          <div class="card  bg-light text-dark" id="newNoteHTML">
-            <!-- <h3>Total Number of Notes</h3>
-            <button class="btn btn-outline-success" type="on submit">note title</button> -->
+
+          <div id="newNoteHTML">
+            <!-- <div class="card  bg-light">
+            <div class="col-10 m-auto rounded border text-${this.color}">
+              <h>${this.title}</h>
+              <h4>${this.createdTime}</h4>
+              <h4>${this.updatedTime}</h4>
+              <h4>${this.wordCount} & ${this.characterCount}</h4>
+  
+              <div class="bg-secondary">
+                <textarea class="textArea" name="body" id="journal" cols="30" rows="10"
+                  onblur="app.noteController.updateActiveNote()">${this.body}
+                          </textarea>
+              </div>
+              <div>
+                <button class="btn btn-outline-danger">delete</button>
+              </div>
+            </div>
+            
+          </div> -->
 
           </div>
 

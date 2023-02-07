@@ -9,6 +9,7 @@ createNewNote(FormData){
     let newNote = new Note(FormData)
     appState.Notes.push(newNote)
     console.log(appState.Notes)
+   
     appState.emit('Notes')
     saveState('notes', appState.Notes)
 }
@@ -16,8 +17,8 @@ createNewNote(FormData){
 updateActiveNote(updatedNote){
     try {
         appState.activeNote.body = updatedNote
-        // TODO need to 'update' the note appropriately....take a look at your Date methods
         
+        // TODO need to 'update' the note appropriately....take a look at your Date methods
         console.log(appState.activeNote, "ACTIVE NOTE" )
         saveState('notes', appState.Notes)
         appState.emit('activeNote')
