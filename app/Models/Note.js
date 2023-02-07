@@ -46,7 +46,7 @@ get activeNote(){
               </textarea>
           </div>
           <div>
-            <button class="btn btn-outline-danger">delete</button>
+            <button class="btn btn-outline-danger" onclick="app.noteController.deleteNote('${this.id}')">delete</button>
           </div>
         </div>
   `

@@ -66,5 +66,17 @@ setNote(noteId){
         
     }
 }
+async deleteNote(noteId){
 
+    try {
+        const yes = await Pop.confirm('sure you want to delete your note?')
+        if (!yes) {return}
+        noteService.deleteNote(noteId)
+    } catch (error) {
+        
+    }
 }
+}
+
+
+
