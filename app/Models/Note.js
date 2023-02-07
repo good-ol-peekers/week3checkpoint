@@ -35,8 +35,8 @@ get activeNote(){
  <div class="col-10 m-auto rounded border ">
  
           <h1 style="color: ${this.color}">${this.title}</h1>
-          <h4>${this.createdTime}</h4>
-          <h4>${this.updatedTime}</h4>
+          <h4>Created at time: ${this.createdTime}</h4>
+          <h4>Last Updated at:${this.updatedTime}</h4>
           <h4>${this.wordCount} & ${this.characterCount}</h4>
           <h4></h4>
 

@@ -19,6 +19,7 @@ updateActiveNote(updatedNote){
     try {
         appState.activeNote.body = updatedNote
         // TODO need to 'update' the note appropriately....take a look at your Date methods
+        addEventListener(appState.activeNote.createdTime)
         console.log(update, "ACTIVE NOTE" )
         saveState('notes', appState.Notes)
         appState.emit('activeNote')
